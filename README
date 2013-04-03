@@ -1,0 +1,6 @@
+Bootstrap Ruby on Rails Application with Authlogic, Can Can, High Voltage and a contact form.
+Perfect to start a presentation + blog website.
+
+Changes to be done before starting:
+- replace all occurences of the application name "Loicginoux" by your app name.
+- mail configuration in the initializer

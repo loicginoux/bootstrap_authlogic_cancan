@@ -1,0 +1,43 @@
+<a href="https://github.com/loicginoux"><img style="position: absolute; top: 0; right: 0; border: 0;z-index:2;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+
+
+	<header class="subhead" id="overview">
+      <div class="inner">
+        <div class="container">
+					<div class="hero-unit">
+							<h1><%= t :introPhrase %></h1>
+							<%= t('introsubtitle').html_safe%>
+						<p>	<%= link_to t(:hire_me), contact_path, :class => 'btn btn-primary btn-large'%></p>
+					</div>
+		</div><!-- /container -->
+      </div>
+    </header>
+
+<div class="container">
+
+  <div class="row">
+    <div class="span4">
+      <h2><%= t :about%></h2>
+      <p><%= t :about_intro_1%><span id="age"></span><%= t :about_intro_2%><a  href="http://www.vyre.com">Vyre</a> <%= t :about_intro_3%></p>
+      <p><%= link_to raw("#{t :more} &raquo;"), static_path('about'), :class => "btn"%></p>
+
+    </div>
+    <div class="span4">
+      <h2><%= t :portfolio%></h2>
+       <p><%= t :portfolio_intro%></p>
+      <p><%= link_to raw("#{t :more} &raquo;"), static_path('portfolio'), :class => "btn"%></p>
+   </div>
+    <div class="span4">
+      <h2><%= t :cv%></h2>
+      <p><%= t :cv_intro%></p>
+      <p><%= link_to raw("#{t :more} &raquo;"), static_path('cv'), :class => "btn"%></p>
+
+    </div>
+  </div>
+
+<script type="text/javascript" charset="utf-8">
+	$(function() {
+	    $('.dynamo').dynamo()
+	  });
+</script>
+

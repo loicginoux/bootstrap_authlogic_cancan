@@ -1,0 +1,47 @@
+
+<section id="contactpage">
+
+	<div class="page-header">
+		<h1>
+			<%= t	:contactme%>
+
+		</h1>
+	</div>
+	<div class="row">
+
+		<div class="span6">
+			<p>You can call me with <a href="http://www.skype.com/go/download">Skype</a> or send me an email.</p>
+			<div class="skype">
+				<a href="skype:lolo_la_goof?call">
+					<img src="http://download.skype.com/share/skypebuttons/buttons/call_blue_white_124x52.png" style="border: none;" width="124" height="52" alt="Skype Me™!" />
+				</a>
+			</div>
+			<%= form_for @message, :html => { :class => "well" }, :url => contact_path do |form| %>
+
+			<% if @message.errors.any? %>
+			<div class="alert alert-error">
+				<% @message.errors.full_messages.each do |msg| %>
+				<p><%= msg %></p>
+				<% end %>
+			</div>
+			<% end %>
+
+
+			<%= form.text_field :name, :class => "span4", :placeholder => t(:name)%>
+
+			<%= form.text_field :email, :class => "span4", :placeholder => t(:email) %>
+
+			<%= form.text_field :subject, :class => "span5", :placeholder => t(:subject) %>
+
+			<%= form.text_area :body, :size => "20x20", :class => "span5", :placeholder => t(:body) %>
+
+			<div class="clear"></div>
+			<%= form.submit t('send'), :class => 'btn'  %>
+
+
+			<% end %>
+		</div>
+
+	</div>
+
+</section>
