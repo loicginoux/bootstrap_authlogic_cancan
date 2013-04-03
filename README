@@ -1,6 +1,53 @@
-Bootstrap Ruby on Rails Application with Authlogic, Can Can, High Voltage and a contact form.
-Perfect to start a presentation + blog website.
+Intro
+=====
+Bootstrap Ruby on Rails Application with following gems and pre-configuration:
+- Authlogic
+- Can Can
+- High Voltage
+- a contact form.
+- paperclip
+- Unicorn for server
 
+It's a perfect start for presentation/portfolio/blog/website. It should also be preconfigured to be deployed in Heroku
+
+testing
+--------
+- cucumber
+- rspec
+- capybara
+- shoulda
+- Factory girl
+
+
+
+HOW TO:
+=======
 Changes to be done before starting:
 - replace all occurences of the application name "Loicginoux" by your app name.
-- mail configuration in the initializer
+- mail configuration in the initializer needs to be adjust for each app
+- production.rb: change asset host
+- development.rb: change asset host
+
+and then run in your development environment:
+```
+foreman start
+```
+it should be running in 0.0.0.0:5000
+
+
+License
+=======
+
+        DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+                    Version 2, December 2004
+
+ Copyright (C) 2004 Sam Hocevar <sam@hocevar.net>
+
+ Everyone is permitted to copy and distribute verbatim or modified
+ copies of this license document, and changing it is allowed as long
+ as the name is changed.
+
+            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+
+  0. You just DO WHAT THE FUCK YOU WANT TO.

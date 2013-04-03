@@ -3,131 +3,17 @@
 <head>
 <meta charset="utf-8">
   <meta charset="utf-8">
-  <meta name="description" content="personal site of Loic Ginoux, freelance web developer">
-  <meta name="author" content="Loic Ginoux">
-  <title>Loïc Ginoux - <%= t :mytitle%></title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title></title>
 
   <%= stylesheet_link_tag  "application" %>
 
   <%= javascript_include_tag  %>
-  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js", "application"%>
-  <%= javascript_include_tag "http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js" %>
-  <%= javascript_include_tag "http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.3.0/mustache.min.js" %>
   <%= csrf_meta_tags %>
-	<script type="text/javascript">
-
-	  var _gaq = _gaq || [];
-	  _gaq.push(['_setAccount', 'UA-27573601-1']);
-	  _gaq.push(['_trackPageview']);
-
-	  (function() {
-	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	  })();
-
-	</script>
 </head>
-<body onload="prettyPrint()">
-	<div class="topbar" data-scrollspy="scrollspy" >
-		<div class="fill">
-			<div class="container">
-				<%= link_to "Loïc Ginoux", static_path("home"), :class => 'brand'%>
-				<ul class="nav">
-						<li class="<%="active" if request.fullpath == page_path("home")%>"><%= link_to t(:home), static_path("home")%></li>
-						<li class="<%="active" if request.fullpath == page_path("about")%>"><%= link_to t(:about), static_path("about")%></li>
-						<li class="<%="active" if request.fullpath == page_path("portfolio")%>"><%= link_to t(:portfolio), static_path("portfolio")%></li>
-						<li class="<%="active" if request.fullpath == page_path("services")%>"><%= link_to t(:services), static_path("services")%></li>
-						<li class="<%="active" if request.fullpath == page_path("cv")%>"><%= link_to t(:cv), static_path("cv")%></li>
-						<li class="<%="active" if request.fullpath == blog_path%>"><%= link_to 'Blog', blog_path%></li>
-						<li class="<%="active" if request.fullpath == lab_path%>"><%= link_to 'Lab', lab_path%></li>
-						<li class="<%="active" if request.fullpath == contact_path %>"><%= link_to t(:contact), contact_path%></li>
-						
-					</ul>
-					<% if current_user && current_user.admin? %>
-						<ul class="nav pull-right"	>
-		           <li class="divider-vertical"></li>
-		           <li class="dropdown">
-		             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin</a>
-		             <ul class="dropdown-menu">
-		               <li><%= link_to "companies", companies_path%></li>
-		               <li><%= link_to "experiences", experiences_path%></li>
-		               <li><%= link_to "qualifications", qualifications_path%></li>
-		               <li><%= link_to "experiments", experiments_path%></li>
-		               <li><%= link_to "posts", blog_path%></li>
-		               <li><%= link_to "friends", contacts_path%></li>
-		             </ul>
-		           </li>
-		         </ul>
-						<script type="text/javascript" charset="utf-8">
-							$('.dropdown-toggle').dropdown();
-						</script>
-					<% end %>
-				<div class="lang right">
-					<ul>
-						<li>
-							<%= link_to(image_tag("en.gif"), :locale => "en")%>
-						</li>
-						<li>
-							<%= link_to(image_tag("fr.gif"), :locale => "fr")%>
-						</li>
-						<li>
-							<%= link_to(image_tag("es.gif"),:locale => "es")%>
-						</li>
-						
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-  <div class="container content">			
-		<% if flash[:alert] %>
-		    <div class="alert alert-error">
-				  <p class="flash-error"><%= flash[:alert] %></p>
-				</div>
-		<% end %>
+<body>
 
-		<% if flash[:notice] %>
-		    <div class="alert alert-info">
-				  <p class="flash-error"><%= flash[:notice] %></p>
-				</div>
-		<% end %>
-
-		<%= yield %>
-
-		<footer>
-			<div id="contact">
-				<div class="row contacts">
-					<div class="span3 mail">
-						<a  href="mailto:lginoux.pro@gmail.com"><%= t :sendemail%></a>
-					</div>
-					<div class="span3 linkedin">
-						<a  href="http://uk.linkedin.com/in/loicginoux"><%= t :connectlinkedin%></a></li>
-					</div>
-					<div class="span3 twitter">
-						<a  href="http://twitter.com/#!/loicginoux"><%= t :followme%></a>
-					</div>
-					<div class="span3 git">
-						<a  href="https://github.com/loicginoux"><%= t :checkoutgit%></a>
-					</div>
-				</div>
-			</div>
-			<div class='footer'>
-				<p><%= t :footer%></p>
-				<p><%= t :siret%> - 
-				  <% if current_user %>
-						<%= link_to "Edit Profile", edit_user_path(:current) %> |
-				    <%= link_to "Logout", logout_path %>
-				  <% else %>
-						<%#= link_to "Register", new_user_path %> |
-				    <%= link_to "Login", login_path %>
-				  <% end %>
-				</p>
-			</div>
-		</footer>
-	</div>
-	
 
 </body>
 </html>
